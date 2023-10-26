@@ -3,15 +3,16 @@ import Ball from "./Modules/Ball.js"
 
 
 
-const canvas = document.querySelector("tela")
+const canvas = document.querySelector("#tela")
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
 
 const ctx = canvas.getContext("2d")
 const Existencias = new Array()
-const Ball = new Ball([0,0])
-Existencias.push(Ball)
+
+const ball = new Ball([0,0])
+Existencias.push(ball)
 
 let lastTime = performance.now()
 
@@ -23,16 +24,17 @@ const mainLoop = () => {
 
 //calcular o delta time
 
-    const now = performance.now
+    const now = performance.now()
     const deltaTime = now - lastTime
     lastTime = now
 
-    for(let existencia of Existencias) {
-        existencia.physicsProcess(deltaTime)
-        existencia.render(ctx)
+   for(let existencia of Existencias){
+    existencia.physicsProcess(deltaTime)
+    existencia.render(ctx)
     }
 
     requestAnimationFrame(mainLoop)
+    
 }
 
 mainLoop()

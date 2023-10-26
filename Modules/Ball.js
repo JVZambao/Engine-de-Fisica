@@ -9,11 +9,11 @@ class Ball extends Existency {
         this.radius = 50
     }
 
-    physhicProcess(deltaTime){
+    physicsProcess(deltaTime){
 
-        super.physhicProcess
+        super.physicsProcess
         console.log(deltaTime)
-        this.position.sum(.05 * deltaTime)
+        this.position.sum( .1 * deltaTime)
     }
 
     render(ctx){

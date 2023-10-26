@@ -2,7 +2,7 @@
 class Existency {
     constructor (){}
 
-    physhicProcess (deltaTime){}
+    physicsProcess(deltaTime){}
     render (ctx){}
 }
 
